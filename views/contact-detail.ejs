@@ -1,0 +1,20 @@
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title"><%= findContact.nama %></h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">
+      <%= findContact.email%>
+    </h6>
+    <h6 class="card-subtitle mb-2 text-body-secondary">
+      <%= findContact.noHp %>
+    </h6>
+    <a
+      href="/contact/edit/<%= findContact.nama %>"
+      class="btn btn-success badge rounded-pill text-bg-primary">Edit
+    </a>
+    <a
+      href="/contact/delete/<%= findContact.nama %>"
+      class="btn btn-danger badge rounded-pill text-bg-danger" onclick= "return confirm('delete contact?')">Delete
+    </a>
+    <a href="/contact" class="card-link d-block">Back</a>
+  </div>
+</div>
