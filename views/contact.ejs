@@ -1,11 +1,9 @@
 <h1>Contact Page</h1>
-
-<% if (msg.length !== 0) { %>
- <div class="alert alert-success" role="alert">
-  <%= msg %>
-</div>
+<% if (contacts.length<1) { %>
+<div class="alert alert-warning" role="alert">No Contact Saved</div>
+<% } else {%> <% if (msg.length !== 0) { %>
+<div class="alert alert-success" role="alert"><%= msg %></div>
 <% } %>
-
 
 <table class="table">
   <thead>
@@ -33,4 +31,5 @@
     <% }) %>
   </tbody>
 </table>
+<%} %>
 <a href="/contact/add" class="btn btn-primary">Add New Contact</a>
