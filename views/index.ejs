@@ -1,0 +1,10 @@
+<h2>List mahasiswa</h2>
+<% if (students.length <1) { %>
+<h2>data mahasiswa kosong</h2>
+<% } else{ %> <% students.forEach(student => { %>
+<ul>
+  <li><%= student.nama %></li>
+  <li><%= student.nrp %></li>
+  <li><%= student.jurusan %></li>
+</ul>
+<% }) %><% } %>

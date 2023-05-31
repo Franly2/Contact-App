@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Edit contact form</h2>
+
+      <% if (typeof errors != "undefined" ) { %>
+      <div class="alert alert-danger" role="alert">
+        <ul>
+          <% errors.forEach(error => { %>
+          <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      </div>
+      <% } %>
+
+      <form method="post" action="/contact?_method=PUT">
+        <input type="hidden" name="_id" value="<%= contact._id %>" />
+        <input
+          type="hidden"
+          name="oldNama"
+          value="<%= contact.oldNama ||
+        contact.nama %>"
+        />
+        <div class="mb-3">
+          <label for="nama" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nama"
+            name="nama"
+            required
+            value="<%= contact.nama %>"
+          />
+          <div id="emailHelp" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            value="<%= contact.email %>"
+          />
+          <div id="emailHelp" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+          <label for="noHp" class="form-label">Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="noHp"
+            name="noHp"
+            required
+            value="<%= contact.noHp %>"
+          />
+          <div id="emailHelp" class="form-text"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Edit</button>
+      </form>
+    </div>
+  </div>
+</div>
